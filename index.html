@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Survei Gaya Belajar Siswa | SMAN 1 Sumberrejo</title>
+<style>
+:root{--blue:#1028d8;--blue2:#071b9e;--orange:#f07816;--yellow:#ffe326;--red:#e92727;--ink:#172044}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(145deg,#06128b,#163cff 55%,#071b9e);color:var(--ink);min-height:100vh;padding:24px 14px}
+.wrap{max-width:850px;margin:auto}.top{text-align:center;color:#fff;margin:0 auto 18px}.logo{width:104px;height:104px;object-fit:contain;background:#fff;border:4px solid var(--yellow);border-radius:50%;padding:4px;box-shadow:0 5px 18px #0005}.top h1{font-size:clamp(22px,4vw,34px);margin:12px 0 5px;text-transform:uppercase;text-shadow:2px 2px #07136c}.top p{margin:0;font-weight:bold;letter-spacing:.5px}
+.card{background:#fff;border:5px solid var(--yellow);border-radius:24px;overflow:hidden;box-shadow:0 12px 30px #0004}.band{background:var(--orange);color:#fff;text-align:center;padding:14px 18px;border-bottom:5px solid var(--red)}.band h2{margin:0;font-size:21px;text-transform:uppercase}.band p{margin:6px 0 0;font-size:14px}
+form{padding:22px}.section-title{color:var(--blue2);font-size:18px;font-weight:800;border-left:7px solid var(--orange);padding:5px 10px;margin:6px 0 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:16px}.field.full{grid-column:1/-1}label,.question{display:block;font-weight:700;margin-bottom:8px}.required{color:#d21e1e}input[type=text],select,textarea{width:100%;padding:12px 13px;border:2px solid #d7dcf5;border-radius:11px;font-size:15px;background:#fbfcff;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #5268ff;border-color:var(--blue)}.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.opt{display:flex;align-items:flex-start;gap:8px;padding:10px;border:1.5px solid #dce1f7;border-radius:10px;background:#fafbff;font-weight:500;line-height:1.35}.opt input{margin-top:2px;accent-color:var(--blue)}.hint{font-size:12px;color:#5c6481;margin-top:5px}.submit{width:100%;border:0;border-radius:13px;padding:15px;background:var(--blue);color:#fff;font-size:17px;font-weight:800;cursor:pointer;margin-top:8px;box-shadow:0 4px 0 var(--blue2)}.submit:disabled{opacity:.6;cursor:wait}.notice{display:none;padding:13px;border-radius:10px;margin:14px 0;font-weight:700}.success{background:#e7f8ed;color:#146b35}.error{background:#fff0f0;color:#a11b1b}.foot{text-align:center;color:#fff;font-size:12px;margin-top:16px;line-height:1.5}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}form{padding:17px}.options{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img class="logo" src="logo-sekolah.jpeg" alt="Logo SMAN 1 Sumberrejo">
+    <h1>Survei Gaya Belajar Siswa</h1>
+    <p>SMA NEGERI 1 SUMBERREJO</p>
+  </header>
+  <main class="card">
+    <div class="band"><h2>Kenali Cara Belajarmu</h2><p>Isi sesuai kebiasaan dan kenyamananmu. Tidak ada jawaban benar atau salah.</p></div>
+    <form id="surveyForm">
+      <div class="section-title">Identitas Siswa</div>
+      <div class="grid">
+        <div class="field"><label for="nama">Nama lengkap <span class="required">*</span></label><input id="nama" name="nama" type="text" maxlength="70" placeholder="Masukkan nama lengkap" required></div>
+        <div class="field"><label for="kelas">Kelas <span class="required">*</span></label><select id="kelas" name="kelas" required><option value="">Pilih kelas</option><option>XI 1</option><option>XI 2</option><option>XI 3</option><option>XI 4</option><option>XI 5</option><option>XI 6</option><option>XI 7</option><option>XI 8</option><option>XI 9</option></select></div>
+      </div>
+      <div class="section-title">Kebiasaan dan Kenyamanan Belajar</div>
+      <div class="field"><span class="question">1. Kamu lebih nyaman belajar dalam suasana seperti apa? <span class="required">*</span></span><div class="options">
+        <label class="opt"><input type="radio" name="suasana" value="Ramai, ada suara dan aktivitas" required> Ramai, ada suara dan aktivitas</label>
+        <label class="opt"><input type="radio" name="suasana" value="Sepi dan tenang"> Sepi dan tenang</label>
+        <label class="opt"><input type="radio" name="suasana" value="Suasana santai dengan sedikit suara"> Santai dengan sedikit suara</label>
+        <label class="opt"><input type="radio" name="suasana" value="Tergantung pelajaran"> Tergantung pelajaran</label>
+      </div></div>
+      <div class="field"><span class="question">2. Saat belajar, apakah kamu suka mendengarkan musik?</span><div class="options">
+        <label class="opt"><input type="radio" name="musik" value="Ya, hampir selalu"> Ya, hampir selalu</label>
+        <label class="opt"><input type="radio" name="musik" value="Kadang-kadang"> Kadang-kadang</label>
+        <label class="opt"><input type="radio" name="musik" value="Tidak, lebih suka hening"> Tidak, lebih suka hening</label>
+        <label class="opt"><input type="radio" name="musik" value="Tidak berpengaruh"> Tidak berpengaruh</label>
+      </div></div>
+      <div class="field"><span class="question">3. Cara belajar yang paling kamu sukai?</span><div class="options">
+        <label class="opt"><input type="radio" name="metode" value="Mendengarkan penjelasan guru"> Mendengarkan penjelasan guru</label>
+        <label class="opt"><input type="radio" name="metode" value="Membaca dan membuat catatan"> Membaca dan membuat catatan</label>
+        <label class="opt"><input type="radio" name="metode" value="Praktik atau mencoba langsung"> Praktik atau mencoba langsung</label>
+        <label class="opt"><input type="radio" name="metode" value="Diskusi dan kerja kelompok"> Diskusi dan kerja kelompok</label>
+        <label class="opt"><input type="radio" name="metode" value="Melihat gambar atau video"> Melihat gambar atau video</label>
+      </div></div>
+      <div class="field"><span class="question">4. Kamu lebih suka mengerjakan tugas...</span><div class="options">
+        <label class="opt"><input type="radio" name="tugas" value="Sendiri"> Sendiri</label>
+        <label class="opt"><input type="radio" name="tugas" value="Bersama teman"> Bersama teman</label>
+        <label class="opt"><input type="radio" name="tugas" value="Bergantung jenis tugas"> Bergantung jenis tugas</label>
+      </div></div>
+      <div class="field"><span class="question">5. Ketika belum memahami materi, apa yang biasanya kamu lakukan?</span><div class="options">
+        <label class="opt"><input type="radio" name="kesulitan" value="Bertanya langsung kepada guru"> Bertanya kepada guru</label>
+        <label class="opt"><input type="radio" name="kesulitan" value="Bertanya kepada teman"> Bertanya kepada teman</label>
+        <label class="opt"><input type="radio" name="kesulitan" value="Mencari penjelasan sendiri"> Mencari penjelasan sendiri</label>
+        <label class="opt"><input type="radio" name="kesulitan" value="Mengulang materi terlebih dahulu"> Mengulang materi dahulu</label>
+      </div></div>
+      <div class="field"><span class="question">6. Waktu belajar yang paling nyaman bagimu?</span><div class="options">
+        <label class="opt"><input type="radio" name="waktu" value="Pagi"> Pagi</label>
+        <label class="opt"><input type="radio" name="waktu" value="Siang"> Siang</label>
+        <label class="opt"><input type="radio" name="waktu" value="Sore"> Sore</label>
+        <label class="opt"><input type="radio" name="waktu" value="Malam"> Malam</label>
+        <label class="opt"><input type="radio" name="waktu" value="Tidak tentu"> Tidak tentu</label>
+      </div></div>
+      <div class="field"><span class="question">7. Saat guru menjelaskan, kamu lebih nyaman jika...</span><div class="options">
+        <label class="opt"><input type="radio" name="penjelasan" value="Penjelasan singkat dan langsung inti"> Singkat dan langsung ke inti</label>
+        <label class="opt"><input type="radio" name="penjelasan" value="Penjelasan rinci dengan contoh"> Rinci dengan banyak contoh</label>
+        <label class="opt"><input type="radio" name="penjelasan" value="Diselingi tanya jawab"> Diselingi tanya jawab</label>
+        <label class="opt"><input type="radio" name="penjelasan" value="Disertai media visual atau video"> Disertai gambar atau video</label>
+      </div></div>
+      <div class="field"><span class="question">8. Seberapa sering kamu membutuhkan jeda/istirahat saat belajar?</span><div class="options">
+        <label class="opt"><input type="radio" name="jeda" value="Sering"> Sering</label>
+        <label class="opt"><input type="radio" name="jeda" value="Sesekali"> Sesekali</label>
+        <label class="opt"><input type="radio" name="jeda" value="Jarang"> Jarang</label>
+        <label class="opt"><input type="radio" name="jeda" value="Hampir tidak pernah"> Hampir tidak pernah</label>
+      </div></div>
+      <div class="field"><span class="question">9. Hal apa yang paling membuatmu sulit fokus di kelas?</span><div class="options">
+        <label class="opt"><input type="radio" name="gangguan" value="Suara terlalu ramai"> Suara terlalu ramai</label>
+        <label class="opt"><input type="radio" name="gangguan" value="Mengantuk atau lelah"> Mengantuk atau lelah</label>
+        <label class="opt"><input type="radio" name="gangguan" value="Materi sulit dipahami"> Materi sulit dipahami</label>
+        <label class="opt"><input type="radio" name="gangguan" value="Gangguan dari teman atau sekitar"> Gangguan dari teman atau sekitar</label>
+        <label class="opt"><input type="radio" name="gangguan" value="Tidak ada, biasanya bisa fokus"> Tidak ada, biasanya bisa fokus</label>
+      </div></div>
+      <div class="field"><span class="question">10. Aktivitas apa yang membuat pelajaran terasa lebih menarik?</span><div class="options">
+        <label class="opt"><input type="radio" name="aktivitas" value="Kuis atau permainan edukatif"> Kuis atau permainan edukatif</label>
+        <label class="opt"><input type="radio" name="aktivitas" value="Diskusi kelompok"> Diskusi kelompok</label>
+        <label class="opt"><input type="radio" name="aktivitas" value="Praktik atau demonstrasi"> Praktik atau demonstrasi</label>
+        <label class="opt"><input type="radio" name="aktivitas" value="Video atau presentasi"> Video atau presentasi</label>
+        <label class="opt"><input type="radio" name="aktivitas" value="Penjelasan dan latihan soal"> Penjelasan dan latihan soal</label>
+      </div></div>
+      <div class="field full"><label for="saran">11. Ada saran agar kegiatan belajar di kelas lebih nyaman? (opsional)</label><textarea id="saran" name="saran" rows="3" maxlength="500" placeholder="Tulis saranmu di sini..."></textarea></div>
+      <div id="notice" class="notice" role="status"></div>
+      <button class="submit" id="submitBtn" type="submit">KIRIM JAWABAN</button>
+      <p class="hint">Jawaban akan tersimpan ke database sekolah. Pastikan nama dan kelas sudah benar sebelum mengirim.</p>
+    </form>
+  </main>
+  <footer class="foot">SMA NEGERI 1 SUMBERREJO<br>Berakhlak Mulia • Berdisiplin • Berprestasi</footer>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSycCdwMgPsU_r_WeBCEDKX12s2TAfDtWZ4",
+  authDomain: "admin-fiks.firebaseapp.com",
+  databaseURL: "https://admin-fiks-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "admin-fiks",
+  storageBucket: "admin-fiks.firebasestorage.app",
+  messagingSenderId: "638737717568",
+  appId: "1:638737717568:web:fe5eab33d06c02cc72c2a5"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const form = document.getElementById('surveyForm');
+const btn = document.getElementById('submitBtn');
+const notice = document.getElementById('notice');
+function showNotice(msg, type){notice.textContent=msg;notice.className='notice '+type;notice.style.display='block';}
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  if(!form.reportValidity()) return;
+  const data = {nama:form.nama.value.trim(),kelas:form.kelas.value};
+  ['suasana','musik','metode','tugas','kesulitan','waktu','penjelasan','jeda','gangguan','aktivitas'].forEach(k=>{
+    const selected=form.querySelector('input[name="'+k+'"]:checked');
+    data[k]=selected ? selected.value : '';
+  });
+  data.saran=form.saran.value.trim();
+  data.createdAt=Date.now();
+  if(!data.nama){showNotice('Nama wajib diisi.','error');return;}
+  btn.disabled=true;btn.textContent='MENGIRIM...';
+  try{
+    await db.ref('survei_gaya_belajar').push(data);
+    form.reset();
+    showNotice('Terima kasih! Jawabanmu berhasil dikirim.','success');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }catch(err){
+    console.error(err);
+    showNotice('Belum berhasil mengirim. Periksa koneksi internet dan aturan Firebase Realtime Database.','error');
+  }finally{btn.disabled=false;btn.textContent='KIRIM JAWABAN';}
+});
+</script>
+</body>
+</html>
